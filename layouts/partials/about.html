@@ -1,0 +1,82 @@
+<section class="about-container">
+  {{ with .Site.Params.avatarURL }}
+  <div class="about__avatar">
+    <img src="{{ . | relURL }}" alt="avatar">
+  </div>
+  {{ end }}
+
+  <div class="about__content">
+    <div class="about__author">
+      <h1>{{ $.Site.Params.author }}</h1>
+      <p>
+        <b>{{ $.Site.Params.authorDescription }}</b>
+      </p>
+    </div>
+
+    <div class="about__description">
+      <article>
+        <h2>Skill set</h2>
+
+        <div class="about__body">
+          <p>
+            One of my strongest ambitions is to become the best programmer I can humanly be.
+          </p>
+
+          <p>
+            Although I find everything about programming interesting, <b>web development</b> is my passion and I enjoy
+            facing challenges across the entire stack.
+          </p>
+
+          <p>
+            Technologies I feel proficient at:
+          <ul>
+            <li>
+              <b>JavaScript</b>, <b>TypeScript</b>, <b>Angular</b>, <b>React</b>, <b>Next.js</b>, <b>Vue.js</b>,
+              <b>RxJS</b>, <b>webpack</b>
+            </li>
+            <li>
+              <b>Node.js</b>, <b>NestJS</b>, <b>SQL</b>, <b>Docker</b>
+            </li>
+          </ul>
+          </p>
+
+          <p>
+            What I'd like to get more acquainted with in the future:
+          <ul>
+            <li>Cloud computing</li>
+            <li>Golang</li>
+          </ul>
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <h2>Contact</h2>
+
+        <div class="about__body">
+          I guess there could be many ways to do that, but the most common would be via <a
+            href="https://twitter.com/anduser96">Twitter</a>, <a href="mailto:andreigtj01@gmail.com">email</a> or <a
+            href="linkedin.com/in/andrei-gatej">LinkedIn</a>.
+        </div>
+      </article>
+
+      <article>
+        <h2>A few other things about me</h2>
+
+        <div class="about__body">
+          <ul>
+            <li>I like to go beyond the abstractions offered by the tools I'm using; hence, exploring the source code is
+              something that I find fun and fulfilling</li>
+            <li>I love sharing my knowledge with other developers; the ways I'm
+              currently doing that is via <a target="_blank"
+                href="https://www.youtube.com/@andreigatej6704">YouTube</a>,
+              <a target="_blank" href="My experience mostly spans the JavaScript ecosystem">Stack Overflow</a> and <a
+                href="/blog">writing articles</a>
+            </li>
+            <li>other hobbies, besides programming: philosophy, doing sports and history</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+  </div>
