@@ -1,7 +1,7 @@
 baseURL = 'https://andreigatej.dev'
 languageCode = 'en-us'
 title = 'Andrei Gătej'
-theme = 'ladder-original'
+theme = 'ladder'
 description = "A place where I'm sharing my programming journey."
 homepage = 'https://andreigatej.dev'
 defaultContentLanguage = "en"
