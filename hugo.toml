@@ -1,0 +1,99 @@
+baseURL = 'https://andreigatej.dev'
+languageCode = 'en-us'
+title = 'Andrei Gătej'
+theme = 'ladder-original'
+description = "A place where I'm sharing my programming journey."
+homepage = 'https://andreigatej.dev'
+defaultContentLanguage = "en"
+paginate = 10
+
+[[menu.main]]
+name = "Blog"
+url = "/blog"
+weight = 1
+
+[[menu.main]]
+name = "Projects"
+url = "/projects"
+weight = 1
+
+
+[[menu.main]]
+name = "Thoughts"
+url = "/thoughts"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
+
+[params]
+brand = "andreigatej.dev"
+avatarURL = "/images/me.png"
+author = "Andrei Gătej"
+authorDescription = "??? auth desc"
+info = "??? info"
+favicon = "/images/favicon.png"
+darkModeTheme = "data-dark-mode"
+
+  [params.options]
+  showDarkMode = true
+  enableImgZooming = true
+  enableMultiLang = true
+  showMetaTags = true
+
+# [params.comments.giscus]
+# enable = true
+# repo = "username/reponame"
+# repo_id = "xxx"
+# category = "Announcements"
+# category_id = "DIC_xxx"
+# mapping = "pathname"
+# position = "top"
+# lang = "en"
+
+[params.comments.utteranc]
+enable = false
+
+# [params.analytics.google]
+# SiteVerificationTag = "xxx"
+
+# [params.analytics.umami]
+# enable = true
+# website_id = "xxx"
+# url = "https://umami-ochre-nu.vercel.app/hugo-ladder.js"
+
+  # [params.guestbook]
+  # title = "Guestbook"
+  # description = "Leave a comment below. It could be anything –- question, appreciation, information, or even humor."
+
+[[params.social]]
+name = "GitHub"
+pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>'
+url = "https://github.com/Andrei0872"
+
+[[params.social]]
+name = "Stack Overflow"
+pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack-overflow" viewBox="0 0 16 16"> <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984z"/> <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z"/> </svg>'
+url = "https://stackoverflow.com/users/9632621/andrei-g%c4%83tej?tab=profile"
+
+[[params.social]]
+name = "YouTube"
+pre = '<?xml version="1.0"?> <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" height="20" width="20" version="1.1" id="Layer_1" viewBox="0 0 461.001 461.001" xml:space="preserve"> <g> <path d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"/> </g> </svg>'
+url = "https://www.youtube.com/@andreigatej6704"
+
+
+
+  # [[<?xml version="1.0"?> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 461.001 461.001" xml:space="preserve"> <g> <path style="fill:#F61C0D;" d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"/> </g> </svg>params.social]]
+  # name = "Dashboard"
+  # pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>'
+  # url = "https://umami-ochre-nu.vercel.app/share/R1lHz7QY/hugo-ladder-exampleSite"
+
+[languages.en]
+languageName = "EN"
+
+
+[taxonomies]
+series = "series"
+tag = "tags"

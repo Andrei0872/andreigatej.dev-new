@@ -1,0 +1,9 @@
+[submodule "themes/ladder"]
+	path = themes/ladder
+	url = https://github.com/guangzhengli/hugo-ladder-exampleSite
+[submodule "themes/devise"]
+	path = themes/devise
+	url = https://github.com/austingebauer/devise.git
+[submodule "themes/ladder-original"]
+	path = themes/ladder-original
+	url = https://github.com/guangzhengli/hugo-theme-ladder
