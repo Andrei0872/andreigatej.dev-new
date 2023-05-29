@@ -97,3 +97,9 @@ languageName = "EN"
 [taxonomies]
 series = "series"
 tag = "tags"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 1
