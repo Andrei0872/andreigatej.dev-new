@@ -3,6 +3,7 @@ title: "Rxjs"
 date: 2023-05-29T19:35:55+03:00
 draft: false
 tags: ["rxjs", "foo", "bar"]
+discussion_id: 1
 ---
 
 ## Intro

@@ -43,15 +43,15 @@ darkModeTheme = "data-dark-mode"
   enableMultiLang = true
   showMetaTags = true
 
-# [params.comments.giscus]
-# enable = true
-# repo = "username/reponame"
-# repo_id = "xxx"
-# category = "Announcements"
-# category_id = "DIC_xxx"
-# mapping = "pathname"
-# position = "top"
-# lang = "en"
+[params.comments.giscus]
+enable = true
+repo = "Andrei0872/andreigatej.dev-new"
+repo_id = "646567290"
+category = "General discussion"
+category_id = "DIC_kwDOJonVes4CW14n"
+mapping = "number"
+position = "top"
+lang = "en"
 
 [params.comments.utteranc]
 enable = false
