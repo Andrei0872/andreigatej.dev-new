@@ -9,6 +9,8 @@ tags: ["rxjs", "foo", "bar"]
 
 lorem ipsum
 
+We are going to use an `Observable` for ...
+
 ## A
 
 lorem ipsum
