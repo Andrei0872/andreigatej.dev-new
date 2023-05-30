@@ -1,0 +1,16 @@
+<div>
+  {{ if .Site.Params.options.showMetaTags -}}
+
+  <ul class="tags-container">
+    {{ range (.GetTerms "tags") }}
+    <li class="tag">
+      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  <p class="summary">
+    {{ .Params.summary }}
+  </p>
+</div>
