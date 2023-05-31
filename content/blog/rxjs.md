@@ -10,6 +10,8 @@ discussion_id: 1
 
 lorem ipsum
 
+[this is a link](https://stackoverflow.com)
+
 We are going to use an `Observable` for ...
 
 ## A
