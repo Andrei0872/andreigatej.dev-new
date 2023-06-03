@@ -10,7 +10,9 @@
   </ul>
   {{ end }}
 
+  {{ if .Params.summary }}
   <p class="summary">
     {{ .Params.summary }}
   </p>
+  {{ end }}
 </div>
