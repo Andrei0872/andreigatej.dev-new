@@ -1,4 +1,7 @@
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  <span>
+  {{ .Text | safeHTML }}
+  </span>
   <a href="#{{ .Anchor | safeURL }}" class="anchor">
     <svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22"
       xmlns="http://www.w3.org/2000/svg">
