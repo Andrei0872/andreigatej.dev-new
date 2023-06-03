@@ -1,9 +1,9 @@
 ---
 title: "Writer Website"
-date: 2023-06-03T20:02:34+03:00
+date: 2019-03-25
 draft: false
 tags: ["html", "css", "javascript"]
-summary: One of my first websites that I'm genuinely proud of.
+summary: Among my first websites that I'm genuinely proud of.
 gh_link: https://andrei0872.github.io/writer-website-template/
 demo_link: https://andrei0872.github.io/writer-website-template/
 has_dedicated_page: true

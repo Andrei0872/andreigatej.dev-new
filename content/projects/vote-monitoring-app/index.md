@@ -1,6 +1,6 @@
 ---
 title: "Vote Monitoring App"
-date: 2020-12-27
+date: 2020-11-30
 draft: false
 tags: ["angular", "rxjs", "contribution"]
 summary: "An app for monitoring elections."
