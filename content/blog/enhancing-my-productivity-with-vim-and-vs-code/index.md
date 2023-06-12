@@ -60,6 +60,9 @@ These are my current VS Code settings that concern Vim:
     ],
 ```
 
+* `"vim.handleKeys"`: specifies which key combinations should be handled by VS Code instead of Vim
+* `"vim.vimrc.*"`: makes possible importing the settings from the `.vimrc` file as well
+
 And this is what the `.vimrc` file looks like:
 
 ```json
