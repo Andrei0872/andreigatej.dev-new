@@ -3,7 +3,7 @@ title: "Angular Forms: Why is ngModelChange late when updating ngModel value"
 date: 2020-09-16
 draft: false
 tags: ["angular"]
-discussion_id: null
+discussion_id: 4
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1331/angular-forms-why-is-ngmodelchange-late-when-updating-ngmodel-value)._
