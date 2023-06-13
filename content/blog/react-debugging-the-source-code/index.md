@@ -72,7 +72,7 @@ A test file might have a lot of test cases(denoted by the `it('...', () => {})` 
 
 ![fit](images/fit.png)
 
-### Debugging a test of the first time
+### Debugging a test for the first time
 
 At this step, we should have a decent set-up that should allow us to debug some tests.
 
