@@ -8,7 +8,12 @@ delete_local_tags () {
 
 delete_remote_tags () {
   echo "Deleting remote tags..." 
-  git push --delete origin $( git ls-remote --tags origin | awk '{print $2}' | grep -Ev "\^" | tr '\n' ' ')
+
+  # In case there are multiple tags. This was only needed once.
+  # git push --delete origin $( git ls-remote --tags origin | awk '{print $2}' | grep -Ev "\^" | tr '\n' ' ')
+
+  git push origin --delete $DEPLOY_TAG
+
   echo "\n"
 }
 
