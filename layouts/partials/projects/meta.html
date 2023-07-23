@@ -4,7 +4,7 @@
   <ul class="tags-container">
     {{ range (.GetTerms "projects_tags") }}
     <li class="tag">
-      <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     </li>
     {{ end }}
   </ul>

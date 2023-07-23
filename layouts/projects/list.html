@@ -3,7 +3,7 @@
 <ul class="all-tags-filter">
   {{ range $name, $taxonomy := .Site.Taxonomies.projects_tags }}
       {{ with $.Site.GetPage (printf "/projects_tags/%s" $name) }}
-          <li class="tag"><a href="{{ .Permalink }}">{{ $name }}</a></li>
+          <li class="tag"><a href="{{ .RelPermalink }}">{{ $name }}</a></li>
       {{ end }}
   {{ end }}
 </ul>
