@@ -2,7 +2,7 @@
 title: "Webpack: An in-depth introduction to SplitChunksPlugin"
 date: 2022-02-21
 draft: false
-tags: ["webpack"]
+blog_tags: ["webpack"]
 discussion_id: null
 ---
 

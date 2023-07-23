@@ -2,7 +2,7 @@
 title: "Angular Router: empty paths, named outlets and a fix that came with Angular 11 "
 date: 2021-06-29
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 

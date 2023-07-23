@@ -2,7 +2,7 @@
 title: "Angular Forms: Why is ngModelChange late when updating ngModel value"
 date: 2020-09-16
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 

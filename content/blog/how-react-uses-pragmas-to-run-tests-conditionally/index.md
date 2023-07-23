@@ -2,7 +2,7 @@
 title: "How React uses pragmas to run tests conditionally"
 date: 2023-06-29T14:17:26+03:00
 draft: false
-tags: ["react", "babel", "jest"]
+blog_tags: ["react", "babel", "jest"]
 discussion_id: null
 ---
 

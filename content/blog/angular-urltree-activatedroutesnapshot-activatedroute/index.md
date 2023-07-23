@@ -2,7 +2,7 @@
 title: "Angular Router: Getting to know UrlTree, ActivatedRouteSnapshot and ActivatedRoute Urltree Activatedroutesnapshot Activatedroute"
 date: 2020-10-03
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 

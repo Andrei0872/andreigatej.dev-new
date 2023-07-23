@@ -2,7 +2,7 @@
 title: "Understanding the magic behind StoreModule of NgRx (@ngrx/store)"
 date: 2020-04-07
 draft: false
-tags: ["angular", "ngrx"]
+blog_tags: ["angular", "ngrx"]
 discussion_id: null
 ---
 

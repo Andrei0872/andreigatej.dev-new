@@ -2,7 +2,7 @@
 title: "Enhancing my productivity with Vim and VS Code"
 date: 2023-06-09T19:12:10+03:00
 draft: false
-tags: ["vim", "vs code"]
+blog_tags: ["vim", "vs code"]
 discussion_id: 4
 ---
 

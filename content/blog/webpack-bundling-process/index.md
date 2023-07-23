@@ -2,7 +2,7 @@
 title: "An in-depth perspective on webpack's bundling process"
 date: 2021-09-27
 draft: false
-tags: ["webpack"]
+blog_tags: ["webpack"]
 discussion_id: null
 ---
 

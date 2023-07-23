@@ -2,7 +2,7 @@
 title: "Demystifying angular/router: what is `RouterScroller` and why is it useful ?"
 date: 2020-10-06
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 

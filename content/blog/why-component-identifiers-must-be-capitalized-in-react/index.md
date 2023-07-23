@@ -2,7 +2,7 @@
 title: "Why component identifiers must be capitalized in React"
 date: 2022-04-07
 draft: false
-tags: ["react"]
+blog_tags: ["react"]
 discussion_id: null
 ---
 

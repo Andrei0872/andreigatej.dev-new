@@ -2,7 +2,7 @@
 title: "Angular Router: Revealing some interesting facts and features"
 date: 2020-10-28
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 
@@ -273,7 +273,7 @@ As you can see, because this option is used, the `/d` will not even be shown in 
 
 ## The hierarchy created by the `RouterOutlet` directive
 
-An Angular Router's fundamental unit is the `RouterOutlet` directive(identifiable as `router-outlet`). Without it, it would not be possible to actually show something in the browser. But, as we've seen while building Angular applications, it's not rare the case when we end up having nested `router-outlet`tags. Speaking of that, let's assume we have a route configuration like this:
+An Angular Router's fundamental unit is the `RouterOutlet` directive(identifiable as `router-outlet`). Without it, it would not be possible to actually show something in the browser. But, as we've seen while building Angular applications, it's not rare the case when we end up having nested `router-outlet`blog_tags. Speaking of that, let's assume we have a route configuration like this:
 
 ```ts
 // in order to be able to see the `BarComponent`'s view, we'd need to have 2 `router-outlet`

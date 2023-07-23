@@ -2,7 +2,7 @@
 title: "Understanding the magic behind @ngrx/effects"
 date: 2020-04-20
 draft: false
-tags: ["angular", "ngrx"]
+blog_tags: ["angular", "ngrx"]
 discussion_id: null
 ---
 

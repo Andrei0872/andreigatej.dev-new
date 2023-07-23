@@ -2,7 +2,7 @@
 title: "Exploring how virtual DOM is implemented in React"
 date: 2022-05-03
 draft: false
-tags: ["react"]
+blog_tags: ["react"]
 discussion_id: null
 ---
 
@@ -46,7 +46,7 @@ function App () {
 
 we’d end up with 4 `FiberNode`s, one for each of the following: the `App` function component, the `<article>` tag, the `<h2>` tag and the `<p>` tag. There is also a **root** `FiberNode`, but it is not relevant now.
 
-The relationships between the React elements persist when it comes to `FiberNode`s. For instance, we could intuitively say that the `App`'s `FiberNode` will be the parent of the `<article>`'s `FiberNode`. As far as the `<h2>` and `<p>` tags are concerned, there is no parent-child relationship, but a **sibling relationship**.
+The relationships between the React elements persist when it comes to `FiberNode`s. For instance, we could intuitively say that the `App`'s `FiberNode` will be the parent of the `<article>`'s `FiberNode`. As far as the `<h2>` and `<p>` blog_tags are concerned, there is no parent-child relationship, but a **sibling relationship**.
 
 In the above paragraph we’ve already listed some of the most important `FiberNode`'s properties:
 

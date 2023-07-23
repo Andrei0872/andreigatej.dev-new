@@ -2,7 +2,7 @@
 title: "Demistifying webpack's 'import' function: using dynamic arguments"
 date: 2021-10-28
 draft: false
-tags: ["webpack"]
+blog_tags: ["webpack"]
 discussion_id: null
 ---
 

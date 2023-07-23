@@ -2,7 +2,7 @@
 title: "A thorough exploration of Angular Forms"
 date: 2020-02-14
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 
@@ -507,7 +507,7 @@ The first occurrence of `NgModelGroup` must be a child of `NgForm`:
 
 ### NgForm
 
-It groups multiple `NgModel` and `NgModelGroup` directives. In the model layer, it is represented by a **top-level** instance, so it listens to form-specific events, such as `reset` and `submit`. Also, it is automatically bound to `<form>` tags.
+It groups multiple `NgModel` and `NgModelGroup` directives. In the model layer, it is represented by a **top-level** instance, so it listens to form-specific events, such as `reset` and `submit`. Also, it is automatically bound to `<form>` blog_tags.
 
 In the model, this is the root `FormGroup` instance of the `AbstractControl` tree.
 

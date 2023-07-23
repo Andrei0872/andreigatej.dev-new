@@ -2,7 +2,7 @@
 title: "Exploring the HttpClientModule in Angular"
 date: 2019-12-30
 draft: false
-tags: ["angular"]
+blog_tags: ["angular"]
 discussion_id: null
 ---
 

@@ -2,7 +2,7 @@
 title: "RxJS: Why memory leaks occur when using a Subject"
 date: 2021-02-13
 draft: false
-tags: ["rxjs"]
+blog_tags: ["rxjs"]
 discussion_id: null
 ---
 
