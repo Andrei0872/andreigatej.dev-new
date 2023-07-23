@@ -2,7 +2,7 @@
 title: "Invoice App"
 date: 2019-08-07
 draft: false
-projects_tags: ["vue", "express", "mysql"]
+projects_tags: ["vue", "node", "mysql"]
 summary: "An Invoice Application built for learning purposes. Indeed, I've feel I've learned a lot!"
 gh_link: https://github.com/Andrei0872/vue-invoice-app
 has_dedicated_page: true
