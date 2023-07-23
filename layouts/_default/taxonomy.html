@@ -7,7 +7,13 @@
       <article>
         <div class="blog-card">
           <h3><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h3>
-          {{ partial "blog/meta.html" . }}
+
+          {{ if eq .Section "blog" }}
+            {{ partial "blog/meta.html" . }}
+          {{ else }}
+            {{ partial "projects/meta.html" . }}
+          {{ end }}
+
         </div>
       </article>
       {{ end -}}
