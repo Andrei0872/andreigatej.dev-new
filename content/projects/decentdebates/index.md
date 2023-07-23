@@ -2,7 +2,7 @@
 title: "Decent Debates"
 date: 2023-07-22T21:58:12+03:00
 draft: false
-tags: ["next.js", "react", "nest.js", "node", "postgres", "redis"]
+projects_tags: ["next.js", "react", "nest.js", "node", "postgres", "redis"]
 summary: A place where all sorts of topics are debated in a respectful and constructive manner.
 gh_link: https://github.com/Andrei0872/decentdebates
 has_dedicated_page: true
@@ -27,8 +27,8 @@ Last but not least, the application is intended to be an **effort of the communi
 
 Some main features are:
 
-* exposing debates and allowing users to filter them(e.g. by debate title, debate tags)
-* an authenticated user can propose debates(and, with them, new debate tags as well) and arguments; the newly proposed debates and arguments are not immediately visible in the app, they are first **converted into tickets** and they are subject to a **review process** in which a **moderator must take part**, along with the ticket's owner
+* exposing debates and allowing users to filter them(e.g. by debate title, debate projects_tags)
+* an authenticated user can propose debates(and, with them, new debate projects_tags as well) and arguments; the newly proposed debates and arguments are not immediately visible in the app, they are first **converted into tickets** and they are subject to a **review process** in which a **moderator must take part**, along with the ticket's owner
 * an argument can have counterarguments
 * a user can inspect a thread of arguments and counterarguments(because counterarguments can have their counterarguments too)
 * an authenticated user can save an argument as a draft and submit it when ready

@@ -2,7 +2,7 @@
 title: "Writer Website"
 date: 2019-03-25
 draft: false
-tags: ["html", "css", "javascript"]
+projects_tags: ["html", "css", "javascript"]
 summary: Among my first websites that I'm genuinely proud of.
 gh_link: https://andrei0872.github.io/writer-website-template/
 demo_link: https://andrei0872.github.io/writer-website-template/

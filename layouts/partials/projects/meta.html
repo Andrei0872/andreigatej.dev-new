@@ -2,7 +2,7 @@
   {{ if .Site.Params.options.showMetaTags -}}
 
   <ul class="tags-container">
-    {{ range (.GetTerms "tags") }}
+    {{ range (.GetTerms "projects_tags") }}
     <li class="tag">
       <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
     </li>

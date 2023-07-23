@@ -2,7 +2,7 @@
 title: "RxJS Fundamentals Course"
 date: 2021-08-30
 draft: false
-tags: ["rxjs", "course"]
+projects_tags: ["rxjs", "course"]
 summary: null
 gh_link: https://github.com/this-is-learning/rxjs-fundamentals-course/blob/main/docs/part-4.md
 has_dedicated_page: true

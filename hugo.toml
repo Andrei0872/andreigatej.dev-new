@@ -96,6 +96,7 @@ languageName = "EN"
 
 [taxonomies]
 blog_tag = "blog_tags"
+projects_tag = "projects_tags"
 
 [markup]
   [markup.tableOfContents]

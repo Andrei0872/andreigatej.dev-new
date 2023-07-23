@@ -2,7 +2,7 @@
 title: "Vote Monitoring App"
 date: 2020-11-30
 draft: false
-tags: ["angular", "rxjs", "contribution"]
+projects_tags: ["angular", "rxjs", "contribution"]
 summary: "An app for monitoring elections."
 gh_link: https://github.com/code4romania/monitorizare-vot-ong/commits?author=Andrei0872
 has_dedicated_page: true
