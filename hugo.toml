@@ -30,7 +30,7 @@ weight = 4
 
 [params]
 brand = "andreigatej.dev"
-avatarURL = "/images/me.png"
+avatarURL = "/images/me_small.jpg"
 author = "Andrei Gătej"
 authorDescription = "Software Developer"
 info = "??? info"
