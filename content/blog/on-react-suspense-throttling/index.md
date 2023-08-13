@@ -187,3 +187,5 @@ I hope this article was able to share some insights about how React’s `Suspens
 Lastly, if you’d like to start you own journey exploring React, I’d kindly suggest checking out [React: how to debug the source code](https://andreigatej.dev/blog/react-debugging-the-source-code/).
 
 Thanks for reading!
+
+*The diagrams have been created with [Excalidraw](https://excalidraw.com/).*
