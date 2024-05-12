@@ -3,7 +3,7 @@ title: "Webpack: An in-depth introduction to SplitChunksPlugin"
 date: 2022-02-21
 draft: false
 blog_tags: ["webpack"]
-discussion_id: null
+discussion_id: 6
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1490/webpack-an-in-depth-introduction-to-splitchunksplugin)._
