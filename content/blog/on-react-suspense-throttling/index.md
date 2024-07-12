@@ -7,6 +7,7 @@ summary: null
 gh_link: null
 discussion_id: null
 weight: null
+description: "On React Suspense’s throttling"
 ---
 
 <!-- https://excalidraw.com/#json=Joq4cmAmyw2jqOhHT-Tkp,aOkzcD-Fbwmp2L0Cyi5UWA -->

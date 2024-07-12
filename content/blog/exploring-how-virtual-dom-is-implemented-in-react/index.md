@@ -4,6 +4,7 @@ date: 2022-05-03
 draft: false
 blog_tags: ["react"]
 discussion_id: null
+description: "Exploring how virtual DOM is implemented in React"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1501/exploring-how-virtual-dom-is-implemented-in-react)._

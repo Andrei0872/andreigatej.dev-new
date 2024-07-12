@@ -4,6 +4,7 @@ date: 2020-10-28
 draft: false
 blog_tags: ["angular"]
 discussion_id: null
+description: "Revealing some interesting facts and features about Angular Router"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1379/angular-router-revealing-some-interesting-facts-and-features)._

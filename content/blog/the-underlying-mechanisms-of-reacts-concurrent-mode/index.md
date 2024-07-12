@@ -7,6 +7,8 @@ summary: null
 gh_link: null
 discussion_id: 5
 weight: null
+description: 123
+description: "How React's Concurrent Mode works"
 ---
 
 <!-- https://excalidraw.com/#json=CsOc3Doai8_kgfIjPiBeM,pnKdJiggoHyUc7jo3oYTHw -->

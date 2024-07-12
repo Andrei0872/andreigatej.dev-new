@@ -4,6 +4,7 @@ date: 2023-06-24T19:07:04+03:00
 draft: false
 tags: ["introspection", "learning"]
 discussion_id: null
+description: "What I've learned about 'learning'"
 ---
 
 ## About me

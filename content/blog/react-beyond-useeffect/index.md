@@ -3,6 +3,7 @@ title: "React: beyond useEffect"
 date: 2023-08-08T13:55:58+03:00
 draft: false
 blog_tags: ["react", "web dev"]
+description: "Understanding more about React's `useEffect` utility"
 ---
 
 ## Introduction

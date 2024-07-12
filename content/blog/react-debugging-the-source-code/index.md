@@ -4,6 +4,7 @@ date: 2023-06-12T15:55:23+03:00
 draft: false
 blog_tags: ["react"]
 discussion_id: 3
+description: "How to debug the source code of React"
 ---
 
 ## Introduction

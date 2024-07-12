@@ -9,6 +9,7 @@ demo_link: https://andrei0872.github.io/writer-website-template/
 has_dedicated_page: true
 discussion_id: null
 weight: 100
+description: 'A simple static website'
 ---
 
 ## About

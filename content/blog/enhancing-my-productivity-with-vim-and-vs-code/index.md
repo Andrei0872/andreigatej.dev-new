@@ -4,6 +4,7 @@ date: 2023-06-09T19:12:10+03:00
 draft: false
 blog_tags: ["vim", "vs code"]
 discussion_id: 4
+description: "Some productivity tips until I fully switch to Neovim"
 ---
 
 ## Introduction

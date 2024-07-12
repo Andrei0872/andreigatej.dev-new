@@ -4,6 +4,7 @@ date: 2021-09-27
 draft: false
 blog_tags: ["webpack"]
 discussion_id: null
+description: "Actually understanding what 'bundling' works under the hood"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1482/an-in-depth-perspective-on-webpacks-bundling-process)._

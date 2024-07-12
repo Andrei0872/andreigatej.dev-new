@@ -4,6 +4,7 @@ date: 2021-10-28
 draft: false
 blog_tags: ["webpack"]
 discussion_id: null
+description: "The beauty of the `import()` function"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1483/demistifying-webpacks-import-function-using-dynamic-arguments)._

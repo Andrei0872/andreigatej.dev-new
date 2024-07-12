@@ -4,6 +4,7 @@ date: 2019-12-30
 draft: false
 blog_tags: ["angular"]
 discussion_id: null
+description: "Exploring the HttpClientModule in Angular"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1142/exploring-the-httpclientmodule-in-angular)._

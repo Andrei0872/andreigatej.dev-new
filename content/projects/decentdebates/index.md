@@ -9,6 +9,7 @@ has_dedicated_page: true
 discussion_id: null
 demo_link: null
 weight: 10
+description: "A FullStack application for debating"
 ---
 
 _This application was also my bachelor's **degree project**._

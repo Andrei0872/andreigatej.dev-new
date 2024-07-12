@@ -4,6 +4,7 @@ date: 2020-10-06
 draft: false
 blog_tags: ["angular"]
 discussion_id: null
+description: "Understanding RouterScroller"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1366/demystifying-angular-router-what-is-routerscroller-and-why-is-it-useful-2)._

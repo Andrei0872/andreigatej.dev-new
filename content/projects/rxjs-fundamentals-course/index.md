@@ -9,6 +9,7 @@ has_dedicated_page: true
 discussion_id: null
 demo_link: https://this-is-learning.github.io/rxjs-fundamentals-course/
 weight: 50
+description: 'A friendly introductory course on RxJS'
 ---
 
 ## About

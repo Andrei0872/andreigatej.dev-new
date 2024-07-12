@@ -4,6 +4,7 @@ date: 2022-04-07
 draft: false
 blog_tags: ["react"]
 discussion_id: null
+description: "A nice story about Babel and React"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1499/why-component-identifiers-must-be-capitalized-in-react)._

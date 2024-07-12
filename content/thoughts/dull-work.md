@@ -4,6 +4,7 @@ date: 2023-06-12T18:10:36+03:00
 draft: false
 tags: ["introspection"]
 discussion_id: null
+description: "On dull work. Sometimes it can't be avoided"
 ---
 
 This title perfectly describes one of the lessons I've got after the years spent at university. But my university experience is a topic for another day(I should finish it first, should be done by July 2023). 

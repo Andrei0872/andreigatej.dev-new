@@ -4,6 +4,7 @@ date: 2020-02-14
 draft: false
 blog_tags: ["angular"]
 discussion_id: null
+description: "Exploring the beautiful mysteries of Angular Forms"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1143/a-thorough-exploration-of-angular-forms)._

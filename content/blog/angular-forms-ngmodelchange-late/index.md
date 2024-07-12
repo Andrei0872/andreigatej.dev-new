@@ -4,6 +4,7 @@ date: 2020-09-16
 draft: false
 blog_tags: ["angular"]
 discussion_id: null
+description: "Understanding the connection between the two"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1331/angular-forms-why-is-ngmodelchange-late-when-updating-ngmodel-value)._

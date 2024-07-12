@@ -4,6 +4,7 @@ date: 2020-10-03
 draft: false
 blog_tags: ["angular"]
 discussion_id: null
+description: "Getting to know UrlTree, ActivatedRouteSnapshot and ActivatedRoute Urltree Activatedroutesnapshot Activatedroute"
 ---
 
 # Introduction

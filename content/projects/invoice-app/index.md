@@ -9,6 +9,7 @@ has_dedicated_page: true
 discussion_id: null
 demo_link: null
 weight: 40
+description: "A FullStack application for creating invoices"
 ---
 
 ## About

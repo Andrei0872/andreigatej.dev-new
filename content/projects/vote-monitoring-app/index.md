@@ -9,6 +9,7 @@ has_dedicated_page: true
 discussion_id: null
 demo_link: null
 weight: 90
+description: 'An application build for vote monitoring'
 ---
 
 ## About

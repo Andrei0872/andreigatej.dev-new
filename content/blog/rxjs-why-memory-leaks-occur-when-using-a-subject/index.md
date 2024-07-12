@@ -4,6 +4,7 @@ date: 2021-02-13
 draft: false
 blog_tags: ["rxjs"]
 discussion_id: null
+description: "Understanding more about memory leaks"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1433/rxjs-why-memory-leaks-occur-when-using-a-subject)._

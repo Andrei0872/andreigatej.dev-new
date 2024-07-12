@@ -4,6 +4,7 @@ date: 2020-04-20
 draft: false
 blog_tags: ["angular", "ngrx"]
 discussion_id: null
+description: "Understanding the magic behind @ngrx/effects"
 ---
 
 _This article has been published on [indepth.dev](https://indepth.dev/posts/1206/understanding-the-magic-behind-ngrx-effects)._
