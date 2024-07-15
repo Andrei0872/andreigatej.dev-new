@@ -20,7 +20,7 @@ As we will see, a problem this plugin solves is **code duplication**, which can 
 A few webpack-related articles that you might find interesting, although they are not required to understand for this write-up:
 
 *   [An in-depth perspective on webpack's bundling process]({{< ref  "/blog/webpack-bundling-process" >}})
-*   [Demistifying webpack's 'import' function: using dynamic arguments]({{< ref "/blog/webpack-import-function-dynamic-arguments" >}})
+*   [Demystifying webpack's 'import' function: using dynamic arguments]({{< ref "/blog/webpack-import-function-dynamic-arguments" >}})
 
 It is highly recommended to follow along by experimenting on the provided StackBlitz demos.
 
