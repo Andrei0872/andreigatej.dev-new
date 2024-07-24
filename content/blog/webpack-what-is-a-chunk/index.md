@@ -4,7 +4,7 @@ date: 2024-07-24
 draft: false
 blog_tags: ["webpack"]
 gh_link: null
-discussion_id: null
+discussion_id: 7
 description: "Getting a better understanding of what a chunk is in webpack"
 ---
 
