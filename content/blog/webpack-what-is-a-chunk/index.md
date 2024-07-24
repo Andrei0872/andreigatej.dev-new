@@ -1,6 +1,6 @@
 ---
 title: "Webpack: what is a chunk?"
-date: 2024-07-19T21:34:37+03:00
+date: 2024-07-24
 draft: false
 blog_tags: ["webpack"]
 gh_link: null
@@ -12,7 +12,7 @@ description: "Getting a better understanding of what a chunk is in webpack"
 
 The word *chunk* seems to be ubiquitous in the parlance of web bundlers, especially of *webpack*.
 
-In my opinion, understanding the concept of a *chunk* is essential to understanding how *webpack* works (even at a higher level only). From my experience, everything revolves around chunks - from input files to code splitting and lazy loading, improvements, optimizations and output files.
+In my opinion, understanding the concept of a *chunk* is essential to understanding how *webpack* works (even at a higher level only). From my experience, everything revolves around chunks - from input files to code splitting and lazy loading, bundle improvements, optimizations and output files.
 
 My goal for this article is to explain as simply and concisely as possible what a chunk is when it comes to *webpack*. The first part will be a bit theoretical, but then we will dive into some practical examples to make sure there are no concepts left unclear. Let’s see how it goes!
 
@@ -33,7 +33,7 @@ In order to clarify things, we first need to make a **distinction** between **in
 
 Initially, a module resides in a file. We could safely state that, in the beginning, there is a 1:1 relationship between a module and a file. 
 
-**After the bundling process**, things will be different - the *rule* we agreed upon earlier no longer is valid. Every file resulted is a **chunk** and the modules that we had initially are just part of those chunks.
+**After the bundling process**, things will be different - the *rule* we agreed upon above no longer is valid. Every file resulted is a **chunk** and the modules that we had initially are just part of those chunks.
 
 So, a module is a file in the beginning, but, after *webpack* has finished bundling, the **resulted files** are called **chunks** and the **chunks contain modules**, as well as runtime code. Webpack uses this runtime code in order to properly tie together all the resulted chunks so that the application becomes functional.
 
@@ -43,7 +43,7 @@ There is good news - this has been the theoretical part of this article. In the 
 
 There are multiple ways to create a chunk:
 
-1. By using the `entry` option. Every `entry` option will result in a new chunk.
+1. By using the `entry` option. Every file provided to the `entry` option will result in a new chunk.
 2. By using the `import()` function. This function allows us to create chunks and even load them dynamically (e.g. based on runtime conditions).
 3. By using certain webpack plugins, such as `SplitChunksPlugin`.
 
@@ -161,7 +161,7 @@ Let’s run webpack with `npm run dev` and see what the output is:
 └── a.chunk.js
 ```
 
-Actually, there are 3 chunks. `a.chunk.js` is the **entry chunk** (i.e. the one that corresponds to the `entry` field), while `1.chunk.js` and `2.chunk.js` map to `b.js`'s chunk and `c.js`'s chunk, respectively. `d.js` simply belongs to `a.chunk.js`.
+Actually, there are 3 chunks. `a.chunk.js` is the **entry chunk** (i.e. the one that corresponds to the `entry` field), while `1.chunk.js` and `2.chunk.js` map to `b.js`'s chunk and `c.js`'s chunk, respectively. The `d.js` module simply belongs to `a.chunk.js`.
 
 If we take a look at what the `import()` functions have been translated into, we shall see the following *runtime code*:
 
@@ -169,11 +169,13 @@ If we take a look at what the `import()` functions have been translated into, we
 
 `import('./b.js')` has turned into `__webpack_require__.e(/* import() */ 1)`. The `e` function, along with other cleverly defined functions, are part of the so-called *runtime code.* Such code, in the context of the `import()` function, is responsible for loading chunks over the network (e.g. via a `script` tag and JSONP), as well as for integrating the constituent modules of loaded chunks so that the entire bundled application is functional.
 
+With the help of the `import()` function, developers can achieve, besides code splitting, **lazy loading**. It also has an interesting trait - it can be used with **dynamic arguments**. I have written an article on this topic [here](https://andreigatej.dev/blog/webpack-import-function-dynamic-arguments/).
+
 ### Creating chunks via webpack plugins
 
 This topic deserves an article on its own, which is why I have written [Webpack: An in-depth introduction to SplitChunksPlugin](https://andreigatej.dev/blog/webpack-splitchunksplugin/). In that article, I share my findings about how `SplitChunksPlugin` acts as an optimization layer in the bundling process.
 
-One case where `SplitChunksPlugin` creates new chunks is when there are *heavy* modules (i.e. files with a lot of lines of code) that are frequently imported in the application. This plugin will *magically* group such heavy modules in chunks so that they are loaded only once and not duplicated at all. This could be a huge performance improvement, especially on devices with low CPU power or low network bandwidth.
+One case where `SplitChunksPlugin` could create new chunks is when there are *heavy* modules (i.e. files with a lot of lines of code) that are frequently imported in the application. This plugin will *magically* group such heavy modules in chunks so that they are loaded only once and not duplicated at all. This could be a huge performance improvement, especially on devices with low CPU power or low network bandwidth.
 
 ## Conclusion
 
