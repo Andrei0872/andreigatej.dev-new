@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
 
-    {{ if .Site.IsServer }}
+    {{ if hugo.IsServer }}
     {{ $cssFile := (dict "targetPath" "css/main.css" "enableSourceMap" true ) }}
     {{ $styles := resources.Get "/scss/app.scss" | toCSS $cssFile }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
