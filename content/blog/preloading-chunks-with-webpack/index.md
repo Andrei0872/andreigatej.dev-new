@@ -56,13 +56,13 @@ _As a side note (and as you might have guessed probably), the `import()` functio
 
 ## Preloading chunks
 
-As hinted at earlier, preloading is one of the [resource hints](https://web.dev/learn/performance/resource-hints#preload) available.
+As hinted at earlier, _preloading_ is one of the [resource hints](https://web.dev/learn/performance/resource-hints#preload) available.
 
 Applying this to webpack, this means we can preload **async chunks** (e.g. other JavaScript files) as early as possible. What *preloading* means is that the file (i.e. the chunk)
-will be **fetched** over the network, but **not executed** yet. Instead of being executed, it will be stored in the browser's cache until the line that calls
+will be **fetched** over the network, but **not executed** yet. Instead of being executed, it will be stored in the browser's cache (we will henceforth assume that the file in question is cacheable) until the line that calls
 `import()` is be reached.
 
-What this means is that if we have this in a file named `a.js`:
+What this means, for example, is that if we have this line in a file named `a.js`:
 
 ```js
 import(/* webpackPreload: true */ 'a1.js')
@@ -72,7 +72,7 @@ We would expect the file `a1.js` to be preloaded. However, as we will see, this 
 if `a.js` is part of an *entry* chunk, then `a1.js` **can't be preloaded**. But, if we had something like this
 
 ```js
-// index.js - entry file in webpack configuration.
+// index.js - entry file, mentioned in webpack configuration.
 import('a.js')
 
 // a.js.
@@ -81,15 +81,48 @@ import(/* webpackPreload: true */ 'a1.js')
 
 Then, when the dynamic import for `a.js` takes place, the chunk that corresponds to `a1.js` **will be preloaded**.
 
-We will clarify these facts later on in the article. For now, let's get familiar with the demo application which will help us gain a better understanding of this topic:
+We will clarify these facts later on in the article. For now, let's get familiar with the [demo application](https://github.com/Andrei0872/understanding-webpack/tree/master/examples/chunk-preload) which will help us gain a better understanding of this topic:
 
 ```
-
+├── a1.js
+├── a2.js
+├── a.js
+├── b.js
+├── index.js
+└── webpack.config.js
 ```
 
-- demo app
-- diagram
+The only relevant information with respect to the wepback configuration is that the `index.js` file is the value of the [`entry` option](https://webpack.js.org/concepts/entry-points/).
 
+The files or, to use webpack's parlance, are not containing any logic more complex that a few simple **dynamic imports**. This diagram describes how these modules are connected:
+
+![module relation diagram](./images/module-relations-diagram.png) 
+
+A few clarifications regarding the diagram above:
+
+- the green bounding rectangles represent **async chunks**; these chunks are created because of the use of the `import()` function
+- the gray bounding rectangle indicates an **entry chunk**, i.e. a chunk that will be invariably by the browser
+- the yellow contained rectangles represent **modules** that are part of certain chunks
+- `a.js` dynamically imports `a1.js` with `import(/* webpackChunkName: 'a1', webpackPreload: true */ "./a1")`; which means `a1.js` will be preloaded
+- all dynamic imports are conditional, e.g. the `import()` function is called, for instance, on a button click; this is relevant because the dynamic chunks are not be loaded immediately
+
+Upon page load, only the `index` chunk will be loaded.
+
+What would happen if the line that calls `import('b.js')` is reached?
+Since `b` is an async chunk, what happens is the `b.js` file will be fetched over the network (e.g. through an HTTP request) and then it will be immediately executed.
+
+Let's see how things go if `import('a.js')` is reached. Firstly, the same thing will happen as for `b` - the `a` chunk will be fetched over the network and then executed.
+However, because `a.js` has instructed webpack to **preload** `a1.js`, the `a1` chunk **will also be fetched** over the network, but not executed. Instead, it will be stored in the browser's cache:
+
+![request for a1](./images/a1-req.png)
+
+The `a1.js` file will be executed only when the line in `a.js` that dynamically imports `a1.js` is reached. Then, **instead of making an HTTP request**, the `a1.js` file will be retrieved right away from the cache and executed
+This it the beauty of preloading assets in general.
+
+In this small example, we only focused on preloading JavaScript files, but the concept should apply for other resources too, such as fonts, images, videos, etc.
+
+_I walked through this example also in this [YouTube video](https://www.youtube.com/watch?v=RHZDvNyWa2Y)._
+
+In the next section, we will take a look at a slightly more complicated example of preloading.
 
 ##  'nested' preloading
-##  ? under the hood
