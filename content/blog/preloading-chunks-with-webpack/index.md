@@ -123,6 +123,33 @@ In this small example, we only focused on preloading JavaScript files, but the c
 
 _I walked through this example also in this [YouTube video](https://www.youtube.com/watch?v=RHZDvNyWa2Y)._
 
-In the next section, we will take a look at a slightly more complicated example of preloading.
+In the next section, we will take a look at a slightly more complicated example of preloading, an example I have named, perhaps lacking inspiration, *nested preloading*.
 
-##  'nested' preloading
+##  Nested preloading
+
+Here is an interesting and practical question worth investigating: *What happens if a preloaded chunk also preloads other chunks?* 
+
+Getting back to our diagram, there is just a simple addition: `a1.js` dynamically imports `a2.js` with the `webpackPrefetch: true` magic comment:
+
+![nested preloading](./images/nested-preloading.png) 
+
+When will `a2.js`'s chunk be fetched? Will it be fetched when the `a.js` file is executed? Or maybe not when `a.js` is executed?
+
+When this question came to mind, I immediately became very intrigued. So intrigued that I had to [make a video](https://youtu.be/n5qT2Z-mrzY?si=JNtCkEnTQGaw-sId) about it where I explore my hypothesis and final result.
+
+Let's take a step-by-step approach to the questions above.
+Firstly and invariably, `index.js` will be fetched and executed in the browser. This is because `index.js` is an entry file (which makes the `index` chunk an *entry chunk*).
+Then, when `a.js` is imported at a later time, because it preloads `a1.js`, the latter will only be fetched by the browser, but not executed. This will happen when the line in `a.js` that imports `a1.js` is reached.
+
+However, what about the fact that `a1.js` (the module that has just been fetched by the browser) **also preloads** `a2.js`? Will `a2.js` be fetched now, too?
+
+The answer is **no**. The explanation is straightforward: `a2.js` can't be fetched because this only happens when `a1.js` is executed by the browser, i.e. when it is actually required.
+But, at this point, `a1.js` has **only** been fetched and not yet required. So, since `a1.js` is not executed -> `a2.js` can't be fetched.
+
+What we have explored in this question was indeed not very complicated, but, in the next section, we will address a question that required some under-the-hood knowledge of webpack. Let's see what that is about.
+
+## Not all chunks can be preloaded
+
+- provide source code
+- explanation
+- webpack thread
