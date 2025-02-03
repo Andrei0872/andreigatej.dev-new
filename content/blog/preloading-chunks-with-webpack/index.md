@@ -129,7 +129,7 @@ In the next section, we will take a look at a slightly more complicated example 
 
 Here is an interesting and practical question worth investigating: *What happens if a preloaded chunk also preloads other chunks?* 
 
-Getting back to our diagram, there is just a simple addition: `a1.js` dynamically imports `a2.js` with the `webpackPrefetch: true` magic comment:
+Getting back to our diagram, there is just a simple addition: `a1.js` dynamically imports `a2.js` with the `webpackPreload: true` magic comment:
 
 ![nested preloading](./images/nested-preloading.png) 
 
@@ -146,10 +146,38 @@ However, what about the fact that `a1.js` (the module that has just been fetched
 The answer is **no**. The explanation is straightforward: `a2.js` can't be fetched because this only happens when `a1.js` is executed by the browser, i.e. when it is actually required.
 But, at this point, `a1.js` has **only** been fetched and not yet required. So, since `a1.js` is not executed -> `a2.js` can't be fetched.
 
-What we have explored in this question was indeed not very complicated, but, in the next section, we will address a question that required some under-the-hood knowledge of webpack. Let's see what that is about.
+What we have explored in this section was indeed not very complicated, but, in the next one, we will address a question that requires some under-the-hood knowledge of webpack. Let's see what that is about!
 
 ## Not all chunks can be preloaded
 
-- provide source code
-- explanation
-- webpack thread
+Although it may sound counter-intuitive, it is true - **not all async chunks** can be preloaded.
+
+Coming back to our demo application, [let's try preloading `a.js` from `index.js`](https://github.com/Andrei0872/understanding-webpack/blob/master/examples/chunk-preload/index.js#L1-L5):
+
+```js
+import(/* webpackChunkName: 'a', webpackPreload: true */ "./a.js")
+```
+
+If we reload the browser, we will see no HTTP request for the `a.js` in the network tab, which means the file has not been preloaded.
+
+But, why is that? Why can't `a.js` be preloaded?
+
+Let's bring back the diagram, with a small modification included:
+
+![preloading the chunk a](./images/preloading-a-chunk.png) 
+
+One thing that stands out from this diagram is that an *entry chunk* dynamically imports an *async chunk*.
+And this is, actually, the reason as to why the `a` chunk can't be preloaded - its **parent chunk** is an entry chunk.
+
+Now, another question emerges - why can't an entry chunk preload an async chunk?
+After some research, I have found [this comment](https://github.com/jantimon/html-webpack-plugin/issues/1317#issuecomment-704870353) on an issue:
+
+> When using preload you must use the script (call import()) within a few seconds [...] So only use preload when the imported module is mandatory for correct function of the app and the app is useless without it.
+
+To my understanding, if a chunk is **critical to an entry chunk** (this is what is being indicated by using the *preload* resource hint), then the async chunk can be statically imported. 
+It it different if an async chunk needs has other async chunks that are critical for the functionality of the former, because one can't know for sure when the async chunk is actually loaded/needed.
+
+If you are curious to read the source code that is responsible for all of this magic, you can start from [here](https://github.com/webpack/webpack/blob/main/lib/prefetch/ChunkPrefetchPreloadPlugin.js#L46-L48).
+I have also created a [repo](https://github.com/Andrei0872/understanding-webpack) where you can find debugging instructions for exploring webpack via the debugger.
+
+## Conclusion
