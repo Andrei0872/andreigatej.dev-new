@@ -62,7 +62,8 @@ Applying this to webpack, this means we can preload **async chunks** (e.g. other
 will be **fetched** over the network, but **not executed** yet. Instead of being executed, it will be stored in the browser's cache (we will henceforth assume that the file in question is cacheable) until the line that calls
 `import()` is be reached.
 
-What this means, for example, is that if we have this line in a file named `a.js`:
+We can tell webpack to preload an async chunk by using the `webpackPreload` magic comment in the `import()` function.
+So, if we have this line in a file named `a.js`:
 
 ```js
 import(/* webpackPreload: true */ 'a1.js')
@@ -177,7 +178,13 @@ After some research, I have found [this comment](https://github.com/jantimon/htm
 To my understanding, if a chunk is **critical to an entry chunk** (this is what is being indicated by using the *preload* resource hint), then the async chunk can be statically imported. 
 It it different if an async chunk needs has other async chunks that are critical for the functionality of the former, because one can't know for sure when the async chunk is actually loaded/needed.
 
-If you are curious to read the source code that is responsible for all of this magic, you can start from [here](https://github.com/webpack/webpack/blob/main/lib/prefetch/ChunkPrefetchPreloadPlugin.js#L46-L48).
+If you are curious to read the source code that is responsible for all of this magic, you can start from [here](https://github.com/webpack/webpack/blob/main/lib/prefetch/ChunkPrefetchPreloadPlugin.js#L46-L48):
 I have also created a [repo](https://github.com/Andrei0872/understanding-webpack) where you can find debugging instructions for exploring webpack via the debugger.
 
 ## Conclusion
+
+In this article, we have been reminded, first of all, of what *preloading* means - it is a browser resource hint that allows us to fetch resources with priority, as soon as possible.
+
+Then, we have learned about what preloading really means in the context of webpack, the essential role of the `import()` function, what *entry chunks* are, what *async chunks* are and how the ways these are connected influence the preloading behaviour.
+
+Thank you for reading!
