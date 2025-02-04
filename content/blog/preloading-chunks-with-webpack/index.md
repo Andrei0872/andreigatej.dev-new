@@ -29,12 +29,12 @@ In simple terms, a chunk is a file that is created as a result of the bundling p
 This generated file contains modules (which can be thought of as the initial files and their entire chains of dependencies), as well some *runtime code*, which is code added by webpack in order to achieve *its magic*.
 
 There are multiple kind of chunks:
-- entry chunks, i.e. chunks created from entry files, declared in the `entry` configuration option
+- entry chunks, i.e. chunks created from entry files, declared in the [`entry` configuration option](https://github.com/Andrei0872/understanding-webpack/blob/master/examples/chunk-preload/webpack.config.js#L9)
 - async chunks, i.e. those created with the `import()` function
 - chunks created automatically by webpack, e.g. when using [webpacks' `SplitChunksPlugin`](https://andreigatej.dev/blog/webpack-splitchunksplugin/)
 
 <!--NOTE: -->
-_I have written in detail about what chunks are in webpack in this [previous article](https://andreigatej.dev/blog/webpack-what-is-a-chunk/)._
+_I have written in more detail about what chunks are in webpack in this [previous article](https://andreigatej.dev/blog/webpack-what-is-a-chunk/)._
 
 ### The `import()` function
 
@@ -48,7 +48,7 @@ Why is it needed to talk about this concept before introducing *chunk preloading
 
 Preloading, in itself, it is a strategy to optimise the experience of the users on the Internet. It narrows down to giving the browser certain instructions that will fetch
 assets with higher priority (typically, one would use that for resource that are critical to the first navigation to the website). 
-When we take into account that `import()` essentially creates files (i.e. assets) that will be loaded at a later time, it makes sense to want to preload such resources with priority.
+When we take into account that `import()` essentially creates files (i.e. assets) that will be loaded at a later time, it makes sense to sometimes want to preload such resources with priority.
 
 We will see how to actually instruct webpack to apply this resource hint in a browser context, as well as other underpinnings of preloading in the following sections.
 
@@ -66,11 +66,12 @@ We can tell webpack to preload an async chunk by using the `webpackPreload` magi
 So, if we have this line in a file named `a.js`:
 
 ```js
+// a.js
 import(/* webpackPreload: true */ 'a1.js')
 ```
 
 We would expect the file `a1.js` to be preloaded. However, as we will see, this will only happen under certain conditions. For instance,
-if `a.js` is part of an *entry* chunk, then `a1.js` **can't be preloaded**. But, if we had something like this
+if `a.js` is part of an *entry* chunk (e.g. for instance, as `index.js` is [here](https://github.com/Andrei0872/understanding-webpack/blob/master/examples/chunk-preload/webpack.config.js#L9)), then `a1.js` **can't be preloaded**. But, if we had something like this
 
 ```js
 // index.js - entry file, mentioned in webpack configuration.
@@ -95,9 +96,7 @@ We will clarify these facts later on in the article. For now, let's get familiar
 
 The only relevant information with respect to the wepback configuration is that the `index.js` file is the value of the [`entry` option](https://webpack.js.org/concepts/entry-points/).
 
-The files or, to use webpack's parlance, are not containing any logic more complex that a few simple **dynamic imports**. This diagram describes how these modules are connected:
-
-![module relation diagram](./images/module-relations-diagram.png) 
+The files - or, to use webpack's parlance, _modules_ - are not containing any logic more complex that a few simple **dynamic imports**. This diagram describes how these modules are connected: ![module relation diagram](./images/module-relations-diagram.png) 
 
 A few clarifications regarding the diagram above:
 
@@ -111,14 +110,16 @@ Upon page load, only the `index` chunk will be loaded.
 
 What would happen if the line that calls `import('b.js')` is reached?
 Since `b` is an async chunk, what happens is the `b.js` file will be fetched over the network (e.g. through an HTTP request) and then it will be immediately executed.
+This means there is no preloading involved and, as a result, the user might need to wait for the network request to complete, as well for parsing and executing the file.
+**However**, this does not mean the *preload* resource hint should be overused - there could be downsides to it, too, such as cache pollution or redundantly used bandwidth.  
+So, we should always choose our tools wisely!
 
-Let's see how things go if `import('a.js')` is reached. Firstly, the same thing will happen as for `b` - the `a` chunk will be fetched over the network and then executed.
-However, because `a.js` has instructed webpack to **preload** `a1.js`, the `a1` chunk **will also be fetched** over the network, but not executed. Instead, it will be stored in the browser's cache:
+When importing `a.js`, because it has instructed webpack to **preload** `a1.js`, the `a1` chunk **will also be fetched** over the network, but not executed. Instead, it will be stored in the browser's cache:
 
 ![request for a1](./images/a1-req.png)
 
 The `a1.js` file will be executed only when the line in `a.js` that dynamically imports `a1.js` is reached. Then, **instead of making an HTTP request**, the `a1.js` file will be retrieved right away from the cache and executed
-This it the beauty of preloading assets in general.
+This it the beauty of preloading assets, in general.
 
 In this small example, we only focused on preloading JavaScript files, but the concept should apply for other resources too, such as fonts, images, videos, etc.
 
@@ -140,7 +141,7 @@ When this question came to mind, I immediately became very intrigued. So intrigu
 
 Let's take a step-by-step approach to the questions above.
 Firstly and invariably, `index.js` will be fetched and executed in the browser. This is because `index.js` is an entry file (which makes the `index` chunk an *entry chunk*).
-Then, when `a.js` is imported at a later time, because it preloads `a1.js`, the latter will only be fetched by the browser, but not executed. This will happen when the line in `a.js` that imports `a1.js` is reached.
+Then, when `a.js` is imported at a later time, because it preloads `a1.js`, the latter will only be fetched by the browser, but not executed. The file will be executed when the line in `a.js` that imports `a1.js` is reached.
 
 However, what about the fact that `a1.js` (the module that has just been fetched by the browser) **also preloads** `a2.js`? Will `a2.js` be fetched now, too?
 
@@ -178,7 +179,7 @@ After some research, I have found [this comment](https://github.com/jantimon/htm
 To my understanding, if a chunk is **critical to an entry chunk** (this is what is being indicated by using the *preload* resource hint), then the async chunk can be statically imported. 
 It it different if an async chunk needs has other async chunks that are critical for the functionality of the former, because one can't know for sure when the async chunk is actually loaded/needed.
 
-If you are curious to read the source code that is responsible for all of this magic, you can start from [here](https://github.com/webpack/webpack/blob/main/lib/prefetch/ChunkPrefetchPreloadPlugin.js#L46-L48):
+If you are curious to read the source code that is responsible for all of this magic, you can start from [here](https://github.com/webpack/webpack/blob/main/lib/prefetch/ChunkPrefetchPreloadPlugin.js#L46-L48).
 I have also created a [repo](https://github.com/Andrei0872/understanding-webpack) where you can find debugging instructions for exploring webpack via the debugger.
 
 ## Conclusion
