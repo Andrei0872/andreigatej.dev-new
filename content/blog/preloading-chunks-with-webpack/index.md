@@ -5,7 +5,7 @@ draft: false
 blog_tags: ["webpack"]
 summary: How to preload chunks with webpack, as well as some not-so-obvious features
 gh_link: null
-discussion_id: null
+discussion_id: 8
 weight: null
 description: Using webpack to preload chunks in order to improve the user experience
 
